@@ -1,16 +1,12 @@
+/* eslint-disable react/jsx-no-target-blank */
 import React, { Component } from 'react'
-import {
-    BrowserRouter as Router,
-    Link,
-    Route,
-    Switch,
-  } from 'react-router-dom';
+
 
 export class MyNavbar extends Component {
     render() {
         return (
-            <Router>
-        <div className="d-flex justify-content-between">
+        <header className="App-header mt-2">
+                <div className="d-flex justify-content-between">
                     
                     <span style={{width:'20%'}} className="myRounded bg-secondary_mine d-flex justify-content-around"> 
                          
@@ -27,8 +23,9 @@ export class MyNavbar extends Component {
          
                     <span>ImNotLuw</span>
                     <img style={{width:'10%', display:'flex'}} className="myRounded" src={process.env.PUBLIC_URL + '/images/luw.png'} alt="luwImage" />
-        </div>
-        </Router>
+            </div>
+        </header>
+
         )
     }
 }
