@@ -3,7 +3,7 @@ import './App.css';
 import { MyNavbar } from './components/navbar/MyNavbar';
 import MyFooter from './components/footer/MyFooter';
 import apiTwitch from './conf/api.twitch';
-
+import idTwitch from './conf/id.twitch';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 
@@ -14,28 +14,20 @@ class App extends Component {
     this.state = {
       twitch: null,
       is_live: false,
-      time: 0
+      time: 0,
+      authorization: ''
     }
   }
 
+  componentDidMount() {
+    //console.log("test")
+     idTwitch.post('/oauth2/token?client_id=23m2e48pcow8sf58r8blnnr1bqjygb&client_secret=y4ktfunbs0qh3qiuynh8u3fkxj8988&grant_type=refresh_token&refresh_token=jid977e7ngygsu7r8b2ekq6a80d4kus3cencvkpcdomlfl4fhi')
+    .then( response => {this.setState({ authorization: response.data.access_token })
+    apiTwitch.get('/helix/search/channels?query=Arst=1', {
+      headers: {
 
-  // componentDidMount() {
-  //   apiTwitch.post('/oauth2/token?client_id=23m2e48pcow8sf58r8blnnr1bqjygb&client_secret=y4ktfunbs0qh3qiuynh8u3fkxj8988&code=s0tq93mx130823br2bfzf5eit1jd3a&grant_type=authorization_code&redirect_uri=http://localhost:3000/')
-  //     .then( response => response.data.results )
-  //     .then( twitchApi => {
-  //       const twitch = twitchApi.map(t => ({ 
-  //         response_type: t.response_type
-  //       }));
-  //       console.log(twitch.response_type)
-  //     })
-  //     .catch( err => console.log(err));
-  // }
-
-
-
-  componentDidMount(e) {
-   console.log("component did mounted...") 
-    apiTwitch.get('/helix/search/channels?query=ImNotLuw&first=1')
+        Authorization: 'Bearer ' + this.state.authorization
+      }})
       .then( response => {this.setState({ twitch: response.data })
        if (response.data) {
          //console.log(this.state.twitch.data[0].is_live)
@@ -45,10 +37,23 @@ class App extends Component {
            })
          }
      } 
-})
+  })
       .catch( err => console.log(err));
-      
-  }
+  })
+    .catch( err => console.log(err));
+
+}
+
+  
+   
+
+
+
+
+
+
+
+    
 
   render() {
   return (
