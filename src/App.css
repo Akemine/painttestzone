@@ -18,6 +18,13 @@
   border-radius: 50px;
 }
 
+.App-content{
+  /* background: rgba(160, 35, 163, 0.10); */
+  width: 100%;
+  height: 100%;
+
+}
+
 .primary {
   color : #F6EAEA;
 }
@@ -37,5 +44,18 @@
 .myRounded {
   border-radius: 50px !important;
 }
-.App-content{
+
+.child{
+  margin: 40px;
+ width: 80% !important;
 }
+
+.scrollBarVertical { 
+  margin:4px, 4px; 
+  padding:4px; 
+  height: 100%;
+  overflow-x: hidden; 
+  overflow-y: auto; 
+  text-align:justify; 
+} 
+
