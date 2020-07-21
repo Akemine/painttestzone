@@ -1,12 +1,11 @@
-import * as axios from 'axios';
-import apiToken from './api.token'
+import * as axios from 'axios'
 
 const apiTwitch = axios.create({
   baseURL: 'https://api.twitch.tv'
 })
 
 apiTwitch.interceptors.request.use( req => {
-  req.headers['client-id'] = '23m2e48pcow8sf58r8blnnr1bqjygb';
+  req.headers['client-id'] = process.env.REACT_APP_IMNOTLUW_TWITCH_CLIENT_ID;
   return req;
 })
 
