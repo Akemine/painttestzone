@@ -27,7 +27,7 @@ class App extends Component {
   getDataFromTwitch(){
       idTwitch.post('/oauth2/token?client_id='+process.env.REACT_APP_IMNOTLUW_TWITCH_CLIENT_ID+'&client_secret='+process.env.REACT_APP_IMNOTLUW_TWITCH_SECRET_CODE+'&grant_type=refresh_token&refresh_token='+process.env.REACT_APP_IMNOTLUW_TWITCH_REFRESH_TOKEN)
       .then( response => {this.setState({ authorization: response.data.access_token })
-        apiTwitch.get('/helix/search/channels?query=Ponce&first=1', {
+        apiTwitch.get('/helix/search/channels?query=Sixquatre&first=1', {
           headers: {
             Authorization: 'Bearer ' + this.state.authorization
           }})

@@ -11,7 +11,7 @@ export class MyNavbar extends Component {
             return <img style={{width:'10%', display:'flex'}} className="myRounded" src={process.env.PUBLIC_URL + '/images/luwonline.png'} alt="luwImage" />
         } else{
     
-            return <img style={{width:'10%', display:'flex'}} className="myRounded" src={process.env.PUBLIC_URL + '/images/luwoffline.png'} alt="luwImage" />
+            return <img style={{width:'9%', display:'flex'}} className="myRounded" src={process.env.PUBLIC_URL + '/images/luwoffline.png'} alt="luwImage" />
         }
     }
 

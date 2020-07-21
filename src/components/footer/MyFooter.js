@@ -5,10 +5,10 @@ class MyFooter extends Component {
 
     displayLiveOnlineOrOffline(is_live){
         if(is_live){
-            return <div style={{marginLeft:'8%', marginTop:'5%'}}><img style={{width:'5%'}} src={process.env.PUBLIC_URL + '/images/twitch.svg'} alt="twitch" /><span  style={{marginLeft:'1%'}}>Stream online !</span></div>
+            return <div style={{marginLeft:'8%', marginTop:'2%', marginBottom: '2%'}}><img style={{width:'5%'}} src={process.env.PUBLIC_URL + '/images/twitch.svg'} alt="twitch" /><span  style={{marginLeft:'1%'}}>Stream online !</span></div>
         } else{
 
-            return <div style={{marginLeft:'8%', marginTop:'5%'}}><img style={{width:'5%'}} src={process.env.PUBLIC_URL + '/images/twitch.svg'} alt="twitch" /><span  style={{marginLeft:'1%', color:'black'}}>Stream offline :(</span></div>
+            return <div style={{marginLeft:'8%', marginTop:'2%', marginBottom: '2%'}}><img style={{width:'5%'}} src={process.env.PUBLIC_URL + '/images/twitch.svg'} alt="twitch" /><span  style={{marginLeft:'1%', color:'black'}}>Stream offline :(</span></div>
         }
     }
     render() {

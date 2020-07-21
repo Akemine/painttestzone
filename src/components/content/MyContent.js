@@ -20,7 +20,7 @@ class MyContent extends Component {
                      
                      {this.props.images.data.map((myImg, index) => (
                                <div key={index}>
-                              <img  className="myRounded child " src={process.env.PUBLIC_URL + '/images/oeuvres/' + myImg} alt="luwImage" />
+                              <img className="imgRounded child " src={process.env.PUBLIC_URL + '/images/oeuvres/' + myImg} alt="luwImage" />
                               </div>
                      )) 
                     }
