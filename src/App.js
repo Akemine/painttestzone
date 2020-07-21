@@ -61,7 +61,7 @@ class App extends Component {
     <div style={{display:'flex', justifyContent:'space-between', flexDirection:'column', height:'100vh'}} className="container">
 
       
-          <MyNavbar></MyNavbar>
+          <MyNavbar is_live = {this.state.is_live}></MyNavbar>
 
 
       <div className="App-content">

@@ -2,7 +2,19 @@
 import React, { Component } from 'react'
 
 
+
 export class MyNavbar extends Component {
+
+    displayLiveOnlineOrOffline(is_live){
+        if(is_live){
+    
+            return <img style={{width:'10%', display:'flex'}} className="myRounded" src={process.env.PUBLIC_URL + '/images/luwonline.png'} alt="luwImage" />
+        } else{
+    
+            return <img style={{width:'10%', display:'flex'}} className="myRounded" src={process.env.PUBLIC_URL + '/images/luwoffline.png'} alt="luwImage" />
+        }
+    }
+
     render() {
         return (
         <header className="App-header mt-2">
@@ -22,7 +34,7 @@ export class MyNavbar extends Component {
                     </span>
          
                     <span>ImNotLuw</span>
-                    <img style={{width:'10%', display:'flex'}} className="myRounded" src={process.env.PUBLIC_URL + '/images/luw.png'} alt="luwImage" />
+                    {this.displayLiveOnlineOrOffline(this.props.is_live)}
             </div>
         </header>
 
