@@ -60,6 +60,35 @@
 
 .imgRounded {
   border-radius: 30px;
-  border: solid 3px black;
+      /* La transition s'applique à la fois sur la largeur et la hauteur, avec une durée d'une seconde. */
+      -webkit-transition: all 1s ease; /* Safari et Chrome */
+      -moz-transition: all 1s ease; /* Firefox */
+      -ms-transition: all 1s ease; /* Internet Explorer 9 */
+      -o-transition: all 1s ease; /* Opera */
+      transition: all 1s ease;
+      
+        /* L'image est grossie de 25% */
+    -webkit-transform:scale(1); /* Safari et Chrome */
+    -moz-transform:scale(1); /* Firefox */
+    -ms-transform:scale(1); /* Internet Explorer 9 */
+    -o-transform:scale(1); /* Opera */
+    transform:scale(1);
+}
+
+.imgRounded:hover{
+
+    /* La transition s'applique à la fois sur la largeur et la hauteur, avec une durée d'une seconde. */
+    -webkit-transition: all 1s ease; /* Safari et Chrome */
+    -moz-transition: all 1s ease; /* Firefox */
+    -ms-transition: all 1s ease; /* Internet Explorer 9 */
+    -o-transition: all 1s ease; /* Opera */
+    transition: all 1s ease;
+    
+      /* L'image est grossie de 25% */
+  -webkit-transform:scale(1.20); /* Safari et Chrome */
+  -moz-transform:scale(1.20); /* Firefox */
+  -ms-transform:scale(1.20); /* Internet Explorer 9 */
+  -o-transform:scale(1.20); /* Opera */
+  transform:scale(1.40);
 }
 
