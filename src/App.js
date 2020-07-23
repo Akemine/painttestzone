@@ -9,7 +9,7 @@ import axios from 'axios';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import MyContent from './components/content/MyContent';
 import Loading from './components/utils/Loading';
-import SimpleReactLightbox from "simple-react-lightbox";
+
 
 class App extends Component {
 
@@ -79,10 +79,7 @@ class App extends Component {
 
                         <div className="App-content myRounded mt-3 mb-3">
                                     {this.state.loaded ? (
-                                      // SimpleReactLightbox est une librairie pour créer une lightbox automatiquement (Il faut ajouter SRLWrapper autour de nos images)
-                                      <SimpleReactLightbox> 
                                       <MyContent images = {this.state.images}></MyContent>
-                                      </SimpleReactLightbox>
                                     ) : (
                                       <Loading/>
                                     )}   

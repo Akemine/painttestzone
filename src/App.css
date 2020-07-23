@@ -1,5 +1,7 @@
 
-
+body{
+  overflow: hidden !important;
+}
 .App-header {
 
   font-size: calc(40px + 2vmin);
@@ -60,6 +62,7 @@
 } 
 
 .imgRounded {
+  
   border-radius: 30px;
       /* La transition s'applique à la fois sur la largeur et la hauteur, avec une durée d'une seconde. */
       -webkit-transition: all 1s ease; /* Safari et Chrome */
@@ -77,6 +80,8 @@
 }
 
 .imgRounded:hover{
+
+    cursor: grab;
 
     /* La transition s'applique à la fois sur la largeur et la hauteur, avec une durée d'une seconde. */
     -webkit-transition: all 1s ease; /* Safari et Chrome */
@@ -97,4 +102,25 @@
 .formalisationTailleImage {
   width:145px !important;
   height: 145px !important;
+}
+
+
+/* Skin de la scrollbar */
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: pink;
+  border-radius: 15px !important;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: rgba(160, 35, 163, 0.60);
+  border-radius: 15px !important;
 }
