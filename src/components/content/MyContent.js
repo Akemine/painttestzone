@@ -8,7 +8,7 @@ class MyContent extends Component {
           
     render() {
         return (   
-          <div className=" scrollBarVertical"  >
+          <div className="scrollBarVertical pt-3 pb-3"  >
                      {/* SimpleReactLightbox est une librairie pour créer une lightbox automatiquement (Il faut ajouter SRLWrapper autour de nos images) */}
                         <SimpleReactLightbox>
                             <Galerie images={this.props.images} ></Galerie>

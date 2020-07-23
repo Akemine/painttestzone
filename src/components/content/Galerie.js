@@ -13,7 +13,7 @@ class Galerie extends Component {
           }
 
           randomColorGenerator(min, max){
-              this.state.colors = ['orange', 'red', 'green', 'brown', 'cyan', 'pink', 'purple', 'black', 'yellow', 'pink', 'cornflowerblue'];
+              this.state.colors = ['orange', '#8D5A97', '#B8EBD0', '#A4A5AE', 'cyan', 'pink', 'purple', 'black', '#B0C7BD', 'pink', '#907F9F'];
               this.state.color = Math.floor(Math.random() * (max - min + 1) ) + min;
               return this.state.colors[this.state.color]
           }
