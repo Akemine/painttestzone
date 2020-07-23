@@ -1,6 +1,6 @@
 /* eslint-disable react/jsx-no-target-blank */
 import React, { Component } from 'react'
-import Loading from '../utils/Loading'
+import { SRLWrapper } from "simple-react-lightbox";
 
 class MyContent extends Component {
 
@@ -23,19 +23,21 @@ class MyContent extends Component {
     render() {
           
         return (
-        
-          <div className="myRounded d-flex justify-content-around scrollBarVertical" style={{flexWrap:'wrap'}} >
-                     
-                     
-                     {this.props.images.data.map((myImg, index) => (
-                               <div key={index}>
-                              <img style={{border: '3px solid ' +  this.randomColorGenerator(0, 10)}} className="imgRounded child" src={process.env.PUBLIC_URL + '/images/oeuvres/' + myImg} alt="luwImage" />
-                              </div>
-                     )) 
-                    }
-
+            
+          <div className=" scrollBarVertical"  >
+                     {/* Ce SRLWrapper enrobe les images afin de les ajouter à une galerie intégré à la lightbox */}
+                     <SRLWrapper> 
+                        <div className="myRounded d-flex justify-content-around" style={{flexWrap:'wrap'}}>
+                            {this.props.images.data.map((myImg, index) => (
+                                <div key={index}>
+                                <img style={{padding:'2px', border: '3px solid ' +  this.randomColorGenerator(0, 10)}} className="imgRounded child formalisationTailleImage" src={process.env.PUBLIC_URL + '/images/oeuvres/' + myImg} alt="luwImage" />
+                                </div>
+                        )) 
+                        }
+                        </div>
+                    </SRLWrapper>
         </div>
-         
+       
         )
     }
 }

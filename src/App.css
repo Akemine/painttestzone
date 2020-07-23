@@ -11,6 +11,7 @@
 }
 
 .App-footer {
+  height: 13%;
   font-size: 25px;
   color: #F6EAEA;
   background: rgba(160, 35, 163, 0.60);
@@ -37,7 +38,7 @@
 }
 .bg-secondary_mine {
   background-color: #E54EE8;
-  opacity: 60%;
+  /* opacity: 60%; */
 }
 
 .myRounded {
@@ -92,3 +93,8 @@
   transform:scale(1.40);
 }
 
+
+.formalisationTailleImage {
+  width:145px !important;
+  height: 145px !important;
+}

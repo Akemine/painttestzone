@@ -9,6 +9,7 @@ import axios from 'axios';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import MyContent from './components/content/MyContent';
 import Loading from './components/utils/Loading';
+import SimpleReactLightbox from "simple-react-lightbox";
 
 class App extends Component {
 
@@ -27,7 +28,7 @@ class App extends Component {
   getDataFromTwitch(){
       idTwitch.post('/oauth2/token?client_id='+process.env.REACT_APP_IMNOTLUW_TWITCH_CLIENT_ID+'&client_secret='+process.env.REACT_APP_IMNOTLUW_TWITCH_SECRET_CODE+'&grant_type=refresh_token&refresh_token='+process.env.REACT_APP_IMNOTLUW_TWITCH_REFRESH_TOKEN)
       .then( response => {this.setState({ authorization: response.data.access_token })
-        apiTwitch.get('/helix/search/channels?query=Sixquatre&first=1', {
+        apiTwitch.get('/helix/search/channels?query=ImNotLuw&first=1', {
           headers: {
             Authorization: 'Bearer ' + this.state.authorization
           }})
@@ -47,7 +48,7 @@ class App extends Component {
   }
 
   getImageFromNode(){
-    axios.get('http://localhost:5000/images', {
+    axios.get('http://imnotluwstream.com/images', {
       headers: {
         'Access-Control-Allow-Origin': '*'
       }
@@ -78,7 +79,10 @@ class App extends Component {
 
                         <div className="App-content myRounded mt-3 mb-3">
                                     {this.state.loaded ? (
+                                      // SimpleReactLightbox est une librairie pour créer une lightbox automatiquement (Il faut ajouter SRLWrapper autour de nos images)
+                                      <SimpleReactLightbox> 
                                       <MyContent images = {this.state.images}></MyContent>
+                                      </SimpleReactLightbox>
                                     ) : (
                                       <Loading/>
                                     )}   
