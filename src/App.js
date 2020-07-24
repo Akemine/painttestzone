@@ -78,7 +78,7 @@ class App extends Component {
             .catch(err => console.log(err));
     }
 
-    // On vient jouer les API après une fois le component App monté
+    // On vient jouer les API une fois le component App monté
     componentDidMount() {
         this.getDataFromTwitch() // Appel api à twitch qui renvoit si live Off ou On
         this.getImageFromNode() // Appel api à mon serveur nodeJS pour récupérer les images
